@@ -21,7 +21,10 @@ pipeline {
             }
         }
         stage('Deploy to Staging') {
-            echo 'Deploy to Staging'
+            steps {
+                echo 'Deploy to Staging'
+            }
+           
         }
         stage('Approval for Prod deploy') {
             steps {
@@ -29,7 +32,9 @@ pipeline {
             }
         }
         stage('Deploy to Production') {
-            echo 'Deploy to Production'
+            steps {
+                echo 'Deploy to Production'
+            }
         }
     }
     // post {
