@@ -20,7 +20,17 @@ pipeline {
                 }
             }
         }
-       
+        stage('Deploy to Staging') {
+            echo 'Deploy to Staging'
+        }
+        stage('Approval for Prod deploy') {
+            steps {
+                input message: 'Approve deployment to production?', ok: 'Deploy'
+            }
+        }
+        stage('Deploy to Production') {
+            echo 'Deploy to Production'
+        }
     }
     // post {
     //     always {
